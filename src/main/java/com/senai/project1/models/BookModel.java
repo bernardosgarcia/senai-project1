@@ -1,5 +1,6 @@
 package com.senai.project1.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -9,49 +10,54 @@ import java.time.LocalDate;
 public class BookModel {
 
     @Id
-    private Integer bok_id;
-    private String bok_title;
-    private String bok_author;
-    private int bok_isbn;
-    private LocalDate bok_pub_date;
+    @Column(name="bok_id")
+    private Integer id;
+    @Column(name="bok_title")
+    private String title;
+    @Column(name="bok_author")
+    private String author;
+    @Column(name="bok_isbn")
+    private int isbn;
+    @Column(name = "bok_pub_date")
+    private LocalDate pubDate;
 
-    public int getBok_id() {
-        return bok_id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setBok_id(int bok_id) {
-        this.bok_id = bok_id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getBok_title() {
-        return bok_title;
+    public String getTitle() {
+        return title;
     }
 
-    public void setBok_title(String bok_title) {
-        this.bok_title = bok_title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getBok_author() {
-        return bok_author;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setBok_author(String bok_author) {
-        this.bok_author = bok_author;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public int getBok_isbn() {
-        return bok_isbn;
+    public int getIsbn() {
+        return isbn;
     }
 
-    public void setBok_isbn(int bok_isbn) {
-        this.bok_isbn = bok_isbn;
+    public void setIsbn(int isbn) {
+        this.isbn = isbn;
     }
 
-    public LocalDate getBok_pub_date() {
-        return bok_pub_date;
+    public LocalDate getPubDate() {
+        return pubDate;
     }
 
-    public void setBok_pub_date(LocalDate bok_pub_date) {
-        this.bok_pub_date = bok_pub_date;
+    public void setPubDate(LocalDate pubDate) {
+        this.pubDate = pubDate;
     }
 }

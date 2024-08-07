@@ -1,7 +1,6 @@
-package com.senai.project1.DTOs;
+package com.senai.project1.dtos;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public record BookDTO(Integer bok_id,
                       String bok_title,
