@@ -3,7 +3,7 @@ package com.senai.project1.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 public class BookModel {
@@ -13,7 +13,7 @@ public class BookModel {
     private String bok_title;
     private String bok_author;
     private int bok_isbn;
-    private LocalDateTime bok_pub_date;
+    private LocalDate bok_pub_date;
 
     public int getBok_id() {
         return bok_id;
@@ -47,11 +47,11 @@ public class BookModel {
         this.bok_isbn = bok_isbn;
     }
 
-    public LocalDateTime getBok_pub_date() {
+    public LocalDate getBok_pub_date() {
         return bok_pub_date;
     }
 
-    public void setBok_pub_date(LocalDateTime bok_pub_date) {
+    public void setBok_pub_date(LocalDate bok_pub_date) {
         this.bok_pub_date = bok_pub_date;
     }
 }

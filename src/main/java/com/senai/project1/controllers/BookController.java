@@ -1,6 +1,7 @@
 package com.senai.project1.controllers;
 
 import com.senai.project1.DTOs.BookDTO;
+import com.senai.project1.models.BookModel;
 import com.senai.project1.services.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,8 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @PostMapping
-    public ResponseEntity<BookDTO> Persist(@RequestBody BookDTO bookDTO) {
+    @PostMapping("/book")
+    public ResponseEntity<BookModel> Persist(@RequestBody BookDTO bookDTO) {
         return bookService.Persist(bookDTO);
     }
 
@@ -28,18 +29,18 @@ public class BookController {
         return null;
     }
 
-    @GetMapping
-    public ResponseEntity<BookDTO> GetByTitle() {
+    @GetMapping("{title}")
+    public ResponseEntity<BookDTO> GetByTitle(@PathVariable String title) {
         return null;
     }
 
-    @GetMapping
-    public ResponseEntity<BookDTO> GetByAuthor() {
+    @GetMapping("{author}")
+    public ResponseEntity<BookDTO> GetByAuthor(@PathVariable String author) {
         return null;
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> Delete() {
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> Delete(@PathVariable Integer id) {
         return null;
     }
 
