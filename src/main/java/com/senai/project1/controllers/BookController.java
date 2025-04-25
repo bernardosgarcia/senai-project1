@@ -18,7 +18,7 @@ public class BookController {
     }
 
     @PostMapping("/book")
-    public ResponseEntity<BookModel> persist(@RequestBody BookDTO bookDTO) {
+    public ResponseEntity<?> persist(@RequestBody BookDTO bookDTO) {
         return bookService.persist(bookDTO);
     }
 

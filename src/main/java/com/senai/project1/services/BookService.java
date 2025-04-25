@@ -20,7 +20,7 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public ResponseEntity<BookModel> persist(BookDTO bookDTO) {
+    public ResponseEntity<?> persist(BookDTO bookDTO) {
         BookModel bookModel = new BookModel();
         try {
             bookModel.setId(bookDTO.bok_id());
@@ -31,7 +31,7 @@ public class BookService {
             bookRepository.save(bookModel);
             return new ResponseEntity<>(bookModel, HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(bookModel, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
